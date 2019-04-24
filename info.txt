@@ -1,6 +1,3 @@
-tech to add:
-socket io + jquery + flask-socketio (async message update)
-
 arch:
 
 /APP
