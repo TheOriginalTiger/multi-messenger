@@ -1,0 +1,18 @@
+tech to add:
+socket io + jquery + flask-socketio (async message update)
+
+arch:
+
+/APP
+    /APP.py # main activator
+    /app
+	/__init__ # just an __init__ func
+	/routes # all flask routes 
+	/tg_module # module for working with telegram
+	/templates #dir with all templates for flask 
+
+TODO:
+replace treading with rq + linux os
+replace jquery w/ clean js
+
+ 
