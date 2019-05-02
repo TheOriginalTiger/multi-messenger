@@ -5,7 +5,7 @@ from flask_socketio import emit
 from threading import Lock
 from queue import Queue
 from telethon import TelegramClient, sync, events, connection
-
+import random
 
 
 thread = None
@@ -43,9 +43,6 @@ def dialog(id_):
     senders = tg_module.dia[int(id_)].senders
     messages = tg_module.dia[int(id_)].messages
     name = tg_module.dia[int(id_)].name
-
-    id_queue.put(id_)
-    
     return render_template(
         "dialog_page.html", 
         senders = senders, 
@@ -55,11 +52,10 @@ def dialog(id_):
     )
 
 @socketio.on('get_message', namespace = '/main')
-def get_message(messaga):    
-    id_ = id_queue.get()
+def get_message(messaga):
+    print(messaga)    
     msg = messaga['messaga'].encode('l1').decode()
-    threads.one_more_queue.put((tg_module.dia[int(id_)].obj, msg))
+    threads.one_more_queue.put((tg_module.dia[int(messaga['user_id'])].obj, msg))
     r = threads.message_sender()
     r.start()
     
-	

@@ -48,7 +48,7 @@ class message_sender(threading.Thread):
 			await client1.connect()
 			await client1.send_message(obj, message = msg)					
 			await client1.disconnect()
-		
+			
 		loop.run_until_complete(main())
 		
 tg = tg_thread(client) 	

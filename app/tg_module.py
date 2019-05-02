@@ -55,6 +55,7 @@ async def new_message_event(event):
 		if obj.id_ == endpoint_id: 
 			obj.messages.append(event.message.message)
 			msg = obj.messages[-1]
+			name = obj.obj.name
 			i = dia.index(obj) + 1 
 	try:			
 		print(msg)
@@ -62,7 +63,7 @@ async def new_message_event(event):
 		print('ошибка!!!')
 	try:
 		lock.acquire()
-		queue.put((i,msg))
+		queue.put((i,msg,name))
 	except:
 		pass 
 	finally:
@@ -88,12 +89,13 @@ def resender():
 		event_to_flask.clear()
 		try:
 			lock.acquire()
-			id_, msg = queue.get()
+			id_, msg, name  = queue.get()
 		finally:
 			lock.release()	
 		socketio.emit('get_new_message', {
 		'id': str(id_),
-		'message': str(msg)
+		'message': str(msg),
+		'name': name
 	}, namespace = '/main') 
 		event_to_async.set()		
 
