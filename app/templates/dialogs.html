@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<h1>KEK DIALOGSSSSSSSS</h1>
+
+{% for i in amount %}
+
+<div class = "content" id = '{{ i + 1 }}'>
+	<a class = "link" href = "{{ url_for('dialog', id_ = i) }}">
+		<img class = "mainavatar" src="{{ url_for('static', filename = 'dickbutt.jpg') }}"></img>
+		<span class="name">{{dias[i].obj.name}}</span>
+		{% if dias[i].messages[-1]|string|length < 50 %}
+		<span class = "message">{{dias[i].messages[-1]}}</span>
+		{% else %}
+		<span class = "message">{{dias[i].messages[-1][:50]}}...</span>
+		{% endif %}
+	</a>
+</div>
+
+{% endfor %}
+
+{% endblock %} 

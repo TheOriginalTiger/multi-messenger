@@ -1,0 +1,27 @@
+.content {
+	
+}
+
+.link {
+	background-color: white; 
+	width: 500px;
+	height: 100px;
+	display: block;
+	text-decoration: none;
+}
+.mainavatar {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin-right: 5px;
+}
+.name {
+	color:black;
+	display: block;
+	margin-bottom: 20px;
+	font-size: 21px;
+}
+.message {
+	color: rgb(116, 116, 116);
+	display: block;
+}

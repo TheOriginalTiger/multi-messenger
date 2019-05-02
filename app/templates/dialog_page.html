@@ -1,0 +1,29 @@
+{%extends "base.html"%}
+
+{% block content %}
+    <div class = 'dialog_content'>
+        <div class = 'header'>
+            <div class = 'header_avatar'><img src ="{{ url_for('static', filename = 'dickbutt.jpg') }}"></div>
+            <div class = 'header_name'><span>{{ name }}}</span></div>
+            <div class = 'menu_button'></div>            
+        </div>
+        <div class = 'messages'>
+            {% for i in amount %}
+
+            <div class = 'messageblock'>
+                <div class = 'dia_avatar'><img src = "{{ url_for('static', filename = 'dickbutt.jpg') }}" class="avatar_img"></img></div>
+                <div class = 'messenger'></div>
+                <div class = 'sender'><span>{{ senders[i] }}</span></div>
+                <div class = 'message_text'>{{ messages[i] }}</div>
+            </div>
+            
+            {% endfor %}    
+        </div>
+
+        <div class = 'send_form'>
+            <div class = 'attachments_button'></div>
+            <div class = 'text_area'><textarea placeholder='Введите сообщение'></textarea></div>
+            <div class = 'send_button'><input type = 'button' value = 'send' onclick="CreateNewMessage();"></div>
+        </div>    
+    </div>
+{% endblock %}

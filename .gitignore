@@ -1,0 +1,11 @@
+#telegram info files
+tg_info.py
+# telegram session db 
+*.session
+*.session-journal
+/app/templates/microblog
+/app/templates/test_templates
+/app/templates/rofl.html
+/app/__pycache__
+/venv
+/.vscode
