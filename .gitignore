@@ -3,9 +3,17 @@ tg_info.py
 # telegram session db 
 *.session
 *.session-journal
+<<<<<<< HEAD
 /app/templates/microblog
 /app/templates/test_templates
 /app/templates/rofl.html
 /app/__pycache__
 /venv
 /.vscode
+=======
+/app/templates/dialog_p.html
+/app/templates/inside_of_fialog.html
+/app/templates/rofl.html
+/venv/*
+/.vscode/*
+>>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb

@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 tech to add:
 socket io + jquery + flask-socketio (async message update)
 
+=======
+>>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 arch:
 
 /APP
@@ -15,4 +18,8 @@ TODO:
 replace treading with rq + linux os
 replace jquery w/ clean js
 
+<<<<<<< HEAD
  
+=======
+ 
+>>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb

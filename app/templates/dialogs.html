@@ -7,8 +7,13 @@
 {% for i in amount %}
 
 <div class = "content" id = '{{ i + 1 }}'>
+<<<<<<< HEAD
 	<a class = "link" href = "{{ url_for('dialog', id_ = i) }}">
 		<img class = "mainavatar" src="{{ url_for('static', filename = 'dickbutt.jpg') }}"></img>
+=======
+	<a class = "link" href = "rofl.com">
+		<img class = "avatar" src="{{ url_for('static', filename = 'dickbutt.jpg') }}"></img>
+>>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 		<span class="name">{{dias[i].obj.name}}</span>
 		{% if dias[i].messages[-1]|string|length < 50 %}
 		<span class = "message">{{dias[i].messages[-1]}}</span>
