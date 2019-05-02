@@ -1,45 +1,27 @@
-<<<<<<< HEAD
 .content {
 	
 }
 
 .link {
-=======
-
-
-.link{
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 	background-color: white; 
 	width: 500px;
 	height: 100px;
 	display: block;
 	text-decoration: none;
 }
-<<<<<<< HEAD
 .mainavatar {
-=======
-.avatar{
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 	width: 100px;
 	height: 100px;
 	float: left;
 	margin-right: 5px;
 }
-<<<<<<< HEAD
 .name {
-=======
-.name{
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 	color:black;
 	display: block;
 	margin-bottom: 20px;
 	font-size: 21px;
 }
-<<<<<<< HEAD
 .message {
-=======
-.message{
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 	color: rgb(116, 116, 116);
 	display: block;
 }

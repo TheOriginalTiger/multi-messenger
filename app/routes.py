@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from app import app, socketio, lock, client
 from flask import render_template
 from app import tg_module, threads,tg_info
@@ -7,51 +6,30 @@ from threading import Lock
 from queue import Queue
 from telethon import TelegramClient, sync, events, connection
 
-=======
-from app import app, socketio, lock
-from flask import render_template
-from app import tg_module
-from flask_socketio import emit
-from threading import Lock
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 
 
 thread = None
 locky = Lock()
-<<<<<<< HEAD
 id_queue = Queue()
-=======
-
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 
 @app.route('/')
 @app.route('/main')
 def main():
-<<<<<<< HEAD
     return render_template('main.html', title= 'main')	
-=======
-	return render_template('main.html', title = 'main')
-	
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 
 @app.route('/dialogs')
 def dialogs():
 	dia = tg_module.dia
-<<<<<<< HEAD
 	return render_template(
         'dialogs.html', 
         title = 'dialogs', 
         dias = dia, 
         amount = range(len(dia)) 
     )
-=======
-	return render_template('dialogs.html', title = 'dialogs', dias = dia, amount = range(len(dia)) )
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 
 @socketio.on('connect', namespace='/main')
 def test_connect():
     global thread
-<<<<<<< HEAD
     #TODO change the idea of sending the user's name 
     name = tg_module.dia[-1].obj.name 
     socketio.emit('info_responder', {'self_name': name}, namespace = '/main')
@@ -85,9 +63,3 @@ def get_message(messaga):
     r.start()
     
 	
-=======
-    with locky:
-        if thread is None:
-            thread = socketio.start_background_task(target = tg_module.resender)
-    
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb

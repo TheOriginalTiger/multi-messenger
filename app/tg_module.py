@@ -3,11 +3,7 @@ from telethon.tl.types import User
 import logging
 import app
 import threading
-<<<<<<< HEAD
 from app import  queue, lock, event_to_async, event_to_flask, socketio, threads 
-=======
-from app import  queue, lock, event_to_async, event_to_flask, socketio 
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 from flask_socketio import emit
 from datetime import datetime
 from time import sleep
@@ -20,7 +16,6 @@ class dialog_():
 		self.id_ = dia_obj.id
 		self.hash = dia_obj.entity.access_hash
 		self.messages = [] 
-<<<<<<< HEAD
 		self.senders = []
 		self.name = self.obj.name
 		for message in client.iter_messages(self.obj, limit = 10):
@@ -58,21 +53,6 @@ async def new_message_event(event):
 		endpoint_id = -1
 	for obj in dia:
 		if obj.id_ == endpoint_id: 
-=======
-		for message in client.iter_messages(self.obj, limit = 10):
-			self.messages.append(message.message)
-		self.messages.reverse()
-
-	def __repr__(self):
-		return "id {} hash {} messages {}".format(self.id_, self.hash, self.messages)
- 
-
-@client.on(events.NewMessage)
-async def new_message_event(event):
-	sender = await event.get_sender()
-	for obj in dia:
-		if obj.id_ == sender.id: 
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 			obj.messages.append(event.message.message)
 			msg = obj.messages[-1]
 			i = dia.index(obj) + 1 
@@ -83,22 +63,15 @@ async def new_message_event(event):
 	try:
 		lock.acquire()
 		queue.put((i,msg))
-<<<<<<< HEAD
 	except:
 		pass 
-=======
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 	finally:
 		lock.release()
 	event_to_flask.set()
 	event_to_async.wait()
 	event_to_async.clear()
-<<<<<<< HEAD
 
 
-=======
-	
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 def resender_kek(): #no use in this one. Gonna keep it as a fun feature 
 	#TODO integrate it in the working process 
 	#TODO create a client func to activate this one 
@@ -122,13 +95,7 @@ def resender():
 		'id': str(id_),
 		'message': str(msg)
 	}, namespace = '/main') 
-<<<<<<< HEAD
 		event_to_async.set()		
-=======
-		event_to_async.set()
-
-		
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 
 def start(client):	
 	client.start()	
@@ -143,30 +110,18 @@ def getting_data(client):
 	for ent in dialogs:
 		try:
 			if type(ent.entity) == User:
-<<<<<<< HEAD
 				#TODO get rid of botssssss (or better a special option for it ) or just mark them as bots 
 				if ent.id == client.get_me().id:
 					myself = dialog_(dia_obj =ent)
 				else:
 					obj = dialog_(dia_obj = ent)
-=======
-				#TODO get rid of botssssss (or better a special option for it )
-				if ent.id == client.get_me().id:
-					myself = dialog_(dia_obj =ent)
-				else:
-					obj = dialog_(dia_obj = ent )
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 					dia.append(obj)		
 		except:
 			pass
 	dia.append(myself)	
 	return dia
 
-<<<<<<< HEAD
 dia = start(client)
-=======
-dia =start(client)
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 
  
 

@@ -7,7 +7,6 @@
 		{%endif%}
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
-<<<<<<< HEAD
 		<link href = "{{ url_for( 'static', filename = 'style.css') }}" rel = "stylesheet"  >
 		<link href = "{{ url_for( 'static', filename = 'dialog_page.css') }}" rel = 'stylesheet'>
 	</head>
@@ -17,31 +16,6 @@
 			<a href= "{{ url_for('main')}}">main</a>
 			<a href = "{{ url_for('dialogs') }}">dialogs</a>
 		</div>
-=======
-		<script type="text/javascript" charset="utf-8" >
-			$(document).ready(function(){
-				namespace = '/main';
-				var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
-	
-				socket.on('get_new_message', function(msg){
-					$('#' + msg.id).children('a').children('.message').text(msg.message);
-				});
-
-				socket.on('timer', function(data){
-					alert(data)
-				});
-	
-			});		
-			</script>
-		<link href = "{{ url_for('static', filename = 'style.css') }}" rel = "stylesheet"  >
-	</head>
-	<body>
-			<div>
-				Mega messenger:
-				<a href= "{{ url_for('main')}}">main</a>
-				<a href = "{{ url_for('dialogs') }}">dialogs</a>
-			</div>
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 		<hr>
 		{% with messages = get_flashed_messages() %}
 		{% if messages %}
@@ -53,9 +27,6 @@
 		{%endif%}
 		{%endwith%}
 		{%block content%}{%endblock%}
-<<<<<<< HEAD
 		<script type = 'text/javascript' src = "{{ url_for('static', filename = 'main_script.js') }}"></script>
 	</body>
-=======
->>>>>>> e0599a6c8a6fb3af42d9bd8c8393ed44f387d3fb
 </html>
